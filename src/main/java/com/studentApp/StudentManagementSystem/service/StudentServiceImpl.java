@@ -33,6 +33,15 @@ public class StudentServiceImpl implements StudentService{
 		Student studentById = studentRepository.findById(id).get();
 		return studentMapper.toResponse(studentById);
 	}
+
+	@Override
+	public StudentResponse updateStudent(Long id, StudentRequest studentRequest) {
+	     Student existing  = studentRepository.findById(id).get();
+	     existing.setName(studentRequest.getName());
+	     existing.setEmai(studentRequest.getEmail());
+	     Student updated = studentRepository.save(existing);
+	     return studentMapper.toResponse(updated);
+	}
 	
 	
 	

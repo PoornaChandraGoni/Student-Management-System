@@ -8,4 +8,8 @@ public interface StudentService {
 	public void createStudent(StudentRequest studentRequest);
 
 	public StudentResponse getStudent(Long id);
+
+	public StudentResponse updateStudent(Long id, StudentRequest studentRequest);
+	
+	
 }
