@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <title>Student Management System</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
-  <h1>Student Management System</h1>
+  <div class="container">
+    <header>
+      <h1>Student Management System</h1>
+    </header>
 
-  <section class="form-section">
-    <h2>Add Student</h2>
-    <form id="studentForm">
-      <input type="text" id="name" placeholder="Enter Name" required>
-      <input type="email" id="email" placeholder="Enter Email" required>
-      <button type="submit">Add Student</button>
-    </form>
-  </section>
+    <section class="controls">
+      <form id="studentForm" class="inline-form">
+        <input id="name" name="name" placeholder="Name" required />
+        <input id="email" name="email" placeholder="Email" required type="email" />
+        <button type="submit" id="addBtn">Add Student</button>
+      </form>
 
-  <section class="list-section">
-    <h2>All Students</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th><th>Name</th><th>Email</th><th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="studentTable"></tbody>
-    </table>
-  </section>
+      <div class="search">
+        <input id="searchInput" placeholder="Search by name or email or id..." />
+        <button id="searchBtn">Search</button>
+        <button id="clearSearchBtn">Clear</button>
+      </div>
+    </section>
+
+    <section class="table-wrap">
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+      </table>
+      <div id="emptyMessage" class="empty">No students found.</div>
+    </section>
+
+    <section class="footer">
+      <small>Tip: Use the Edit button to update a student, Delete to remove.</small>
+    </section>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal-hidden">
+    <div class="modal">
+      <h3>Edit Student</h3>
+      <form id="editForm">
+        <input id="editId" type="hidden" />
+        <label>Name</label>
+        <input id="editName" required />
+        <label>Email</label>
+        <input id="editEmail" type="email" required />
+        <div class="modal-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="cancelEdit">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Some toast message</div>
 
   <script src="script.js"></script>
 </body>
