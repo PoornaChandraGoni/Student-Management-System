@@ -9,7 +9,7 @@ public class StudentResponse {
 	public StudentResponse() {
 	};
 
-	public StudentResponse(Long id, String name, String emai) {
+	public StudentResponse(Long id, String name, String email) {
 		this.id = id;
 		this.name = name;
 		this.email = email;

@@ -14,14 +14,14 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String emai;
+	private String email;
 	
 	public Student() {};
-	public Student(Long id, String name, String emai) {
+	public Student(Long id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.emai = emai;
+		this.email = email;
 	}
 	public Long getId() {
 		return id;
@@ -35,11 +35,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmai() {
-		return emai;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmai(String emai) {
-		this.emai = emai;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

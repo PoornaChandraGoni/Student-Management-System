@@ -1,15 +1,23 @@
 package com.studentApp.StudentManagementSystem.service;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
 import com.studentApp.StudentManagementSystem.dto.StudentRequest;
 import com.studentApp.StudentManagementSystem.dto.StudentResponse;
 
 public interface StudentService {
 	
-	public void createStudent(StudentRequest studentRequest);
+	public StudentResponse createStudent(StudentRequest studentRequest);
 
-	public StudentResponse getStudent(Long id);
+	public ResponseEntity<StudentResponse> getStudent(Long id);
 
 	public StudentResponse updateStudent(Long id, StudentRequest studentRequest);
+
+	public ResponseEntity<List<StudentResponse>> foundStudent(String name, String email, Long id);
+
+	
 	
 	
 }

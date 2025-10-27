@@ -15,14 +15,14 @@ public class StudentMapper {
 		Student student = new Student();
 		
 		student.setName(studentRequest.getName());
-		student.setEmai(studentRequest.getEmail());
+		student.setEmail(studentRequest.getEmail());
 		return student;
 	}
 
 	public StudentResponse toResponse(Student saved) {
 		
 		if(saved == null) return null;
-		return new StudentResponse(saved.getId(),saved.getName(),saved.getEmai());
+		return new StudentResponse(saved.getId(),saved.getName(),saved.getEmail());
 		
 	}
 	
